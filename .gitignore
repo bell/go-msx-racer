@@ -1,0 +1,27 @@
+# The cartridge ROM is copyrighted and is not distributed here. Put your
+# own copy at the repo root; see the README.
+*.rom
+
+# Extracted game assets. These are Konami's data, just decompressed out of
+# the ROM, so they are not distributed either -- rebuild them with:
+#   go run ./cmd/extract
+# assets/assets.go is source and stays tracked; only the extracted binary
+# data is ignored.
+assets/**/*.bin
+assets/*.bin
+
+# The generated disassembly listing, likewise derived from the ROM.
+# Rebuild it with:
+#   go run ./cmd/disasm -rom "Road Fighter - Konami (1985) [7349].rom" -out docs/listing.asm
+docs/listing.asm
+
+# cmd/play's frame dumps.
+frame.png
+
+# Stray `go build` output at the repo root (use `go run ./cmd/<tool>`).
+/extract
+/play
+/disasm
+/screenshot
+
+.DS_Store

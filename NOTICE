@@ -1,0 +1,41 @@
+go-msx-racer
+An open-source Go engine implementation for a 1985 MSX racing game.
+
+UNOFFICIAL AND UNAFFILIATED
+===========================
+
+This is an independent, non-commercial hobby project. It is not
+affiliated with, authorised by, endorsed by, or connected to Konami or
+any other rights holder.
+
+Trademarks referenced in this repository -- including the names of the
+hardware and of the original software this engine interoperates with --
+are the property of their respective owners. They are used only
+descriptively, to identify what this code does, and no claim of
+ownership, sponsorship or endorsement is made or implied.
+
+NO GAME DATA IS DISTRIBUTED HERE
+================================
+
+This repository contains original Go source code, documentation, and
+screenshots of the running engine. It does not contain, and will not
+contain:
+
+  * the cartridge ROM image
+  * graphics or sound data extracted from it (assets/**/*.bin)
+  * the generated disassembly listing (docs/listing.asm)
+
+All three are excluded by .gitignore. Users supply their own
+legally-obtained cartridge image; the cmd/extract and cmd/disasm tools
+rebuild everything else locally.
+
+INTEROPERABILITY
+================
+
+The engine executes no Z80 machine code and embeds no copy of the
+original program. Each routine was studied to determine its observable
+behaviour and rewritten from scratch in Go, against an abstract hardware
+interface, so that the game runs natively on modern operating systems.
+
+This notice is not legal advice and is not a warranty. Rights holders
+with a concern about this repository are invited to open an issue.
