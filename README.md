@@ -212,3 +212,4 @@ which this project is published.
 
 None of the above is legal advice, and it is not a warranty. If you are a
 rights holder with a concern about this repository, please open an issue.
+See [NOTICE](NOTICE).
