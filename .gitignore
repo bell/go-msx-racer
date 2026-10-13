@@ -25,3 +25,6 @@ frame.png
 /screenshot
 
 .DS_Store
+
+# serena auto-generated config
+.serena/
