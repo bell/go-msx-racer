@@ -1,7 +1,7 @@
 {
   description = "Build and play go-msx-racer with locally extracted ROM assets";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
   outputs = { nixpkgs, ... }:
     let
