@@ -74,6 +74,23 @@ Needs Go 1.27+ and a display. The window is the MSX's 256x192 screen at
 
 ### Working on the port
 
+With Nix (flakes enabled), enter the development shell for Go 1.27 and
+the native graphics/audio build and runtime dependencies:
+
+```bash
+nix develop
+go run ./cmd/extract   # once, after supplying your own ROM as above
+go build ./...
+go run ./cmd/play
+```
+
+Run these commands from the repository root. The shell supports x86_64 and
+ARM64 Linux and Apple Silicon macOS; playing still needs a graphical
+desktop and working host graphics and audio drivers (including
+X11/XWayland on Linux). Assets stay local:
+the flake provides a development shell rather than a packaged game,
+because the build embeds the ROM-derived files excluded from Git.
+
 To trace routines yourself you also want the disassembly, which is
 likewise generated rather than distributed:
 
