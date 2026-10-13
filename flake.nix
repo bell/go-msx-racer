@@ -14,6 +14,7 @@
           pkgs = import nixpkgs { inherit system; };
           linuxLibraries = with pkgs; [
             alsa-lib
+            alsa-plugins
             libGL
             libX11
             libXcursor
@@ -33,6 +34,10 @@
             # Ebitengine also loads graphics libraries dynamically at runtime.
             shellHook = pkgs.lib.optionalString pkgs.stdenv.hostPlatform.isLinux ''
               export LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath linuxLibraries}''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+              if [ -d /run/opengl-driver/lib ]; then
+                export LD_LIBRARY_PATH="/run/opengl-driver/lib:$LD_LIBRARY_PATH"
+              fi
+              export ALSA_PLUGIN_DIR="''${ALSA_PLUGIN_DIR:-${pkgs.alsa-plugins}/lib/alsa-lib}"
             '';
           };
         });
